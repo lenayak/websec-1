@@ -1,0 +1,81 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+    margin: 0;
+}
+
+.redBorder {
+    border: red dashed 2px;
+    border-radius: 10px;
+    color: red;
+}
+
+.main-area {
+    background-color: lightgreen;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(95, 5, 5, 0.5);
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input-container {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 10px;
+}
+
+input, select {
+    max-width: 150px;
+    padding: 10px;
+    border: 1px solid #aaa;
+    border-radius: 10px;
+}
+input::placeholder  {
+    color:red;
+}
+button {
+    padding: 10px 20px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 10px;
+    background-color: white;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: rgb(87, 146, 87);
+    color: #ffffff;
+}
+
+.results {
+    border: red dashed 2px;
+    color: red;
+    margin-top: 10px;
+    padding: 10px;
+    width: 100%;
+    text-align: left;
+    background-color: white;
+    border-radius: 10px;
+    font-size: 1.2em;
+    height: calc(5 * (1.2em + 10px));
+    overflow-y: auto;
+}
+
+.result-item {
+    padding: 5px 0;
+}
+
+.old-result {
+    color: rgb(249, 116, 34);
+}
+
