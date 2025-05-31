@@ -1,5 +1,23 @@
+:root {
+    --border-color: red;
+    --border-style: dashed;
+    --border-width: 2px;
+    --border-radius: 10px;
+    --font-family: Arial, sans-serif;
+    --main-bg-color: lightgreen;
+    --shadow-color: rgba(95, 5, 5, 0.5);
+    --button-bg: white;
+    --button-hover-bg: rgb(87, 146, 87);
+    --button-font-weight: bold;
+    --text-color: red;
+    --old-result-color: rgb(249, 116, 34);
+    --placeholder-color: red;
+    --font-size-result: 1.2em;
+    --result-height: calc(5 * (var(--font-size-result) + 10px));
+}
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: var(--font-family);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -9,16 +27,16 @@ body {
 }
 
 .redBorder {
-    border: red dashed 2px;
-    border-radius: 10px;
-    color: red;
+    border: var(--border-style) var(--border-color) var(--border-width);
+    border-radius: var(--border-radius);
+    color: var(--border-color);
 }
 
 .main-area {
-    background-color: lightgreen;
+    background-color: var(--main-bg-color);
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 2px 2px 10px rgba(95, 5, 5, 0.5);
+    border-radius: var(--border-radius);
+    box-shadow: 2px 2px 10px var(--shadow-color);
     text-align: center;
     width: 100%;
     max-width: 400px;
@@ -37,37 +55,39 @@ input, select {
     max-width: 150px;
     padding: 10px;
     border: 1px solid #aaa;
-    border-radius: 10px;
+    border-radius: var(--border-radius);
 }
-input::placeholder  {
-    color:red;
+
+input::placeholder {
+    color: var(--placeholder-color);
 }
+
 button {
     padding: 10px 20px;
     margin: 10px 0;
     border: none;
-    border-radius: 10px;
-    background-color: white;
+    border-radius: var(--border-radius);
+    background-color: var(--button-bg);
     cursor: pointer;
-    font-weight: bold;
+    font-weight: var(--button-font-weight);
 }
 
 button:hover {
-    background-color: rgb(87, 146, 87);
+    background-color: var(--button-hover-bg);
     color: #ffffff;
 }
 
 .results {
-    border: red dashed 2px;
-    color: red;
+    border: var(--border-style) var(--border-color) var(--border-width);
+    color: var(--border-color);
     margin-top: 10px;
     padding: 10px;
     width: 100%;
     text-align: left;
     background-color: white;
-    border-radius: 10px;
-    font-size: 1.2em;
-    height: calc(5 * (1.2em + 10px));
+    border-radius: var(--border-radius);
+    font-size: var(--font-size-result);
+    height: var(--result-height);
     overflow-y: auto;
 }
 
@@ -76,6 +96,5 @@ button:hover {
 }
 
 .old-result {
-    color: rgb(249, 116, 34);
+    color: var(--old-result-color);
 }
-

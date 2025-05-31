@@ -32,8 +32,9 @@ function calculate() {
 
         addResult(resultsBox, `${num1} ${operator} ${num2} = ${result}`);
 
+        // Удаляем первый результат, если их больше 5
         if (resultsBox.children.length > 5) {
-            resultsBox.removeChild(resultsBox.firstChild);
+            resultsBox.removeChild(resultsBox.firstElementChild);
         }
     } catch (error) {
         alert(error.message);
@@ -41,14 +42,14 @@ function calculate() {
 }
 
 function addResult(resultsBox, resultText) {
-    const previousResults = resultsBox.getElementsByClassName("result-item");
-    for (let i = 0; i < previousResults.length; i++) {
-        previousResults[i].classList.add("old-result");
-    }
+    // Затенение старых результатов
+    Array.from(resultsBox.children).forEach(child => {
+        child.classList.add("old-result");
+    });
 
+    // Создание нового результата
     const newResult = document.createElement("div");
-    newResult.classList.add("result-item");
+    newResult.className = "result-item";
     newResult.innerHTML = `<b>${resultText}</b>`;
-
-    resultsBox.append(newResult);
+    resultsBox.appendChild(newResult);
 }
